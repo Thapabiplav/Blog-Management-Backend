@@ -1,4 +1,4 @@
-const {Sequelize,Datatypes}= require("sequelize")
+const {Sequelize,DataTypes}= require("sequelize")
 
 const sequelize = new Sequelize(process.env.CS)
 
@@ -14,6 +14,10 @@ const db ={}
 db.Sequelize=Sequelize
 db.sequelize=sequelize
 
+db.users = require('./models/userModel') (sequelize,DataTypes)
+
 sequelize.sync({alter:false}).then(()=>{
   console.log('migration done successfully');
 })
+
+module.exports = db;
