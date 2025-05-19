@@ -15,6 +15,7 @@ db.Sequelize=Sequelize
 db.sequelize=sequelize
 
 db.users = require('./models/userModel') (sequelize,DataTypes)
+db.blogs = require('./models/blogModel')  (sequelize,DataTypes)
 
 sequelize.sync({alter:false}).then(()=>{
   console.log('migration done successfully');
